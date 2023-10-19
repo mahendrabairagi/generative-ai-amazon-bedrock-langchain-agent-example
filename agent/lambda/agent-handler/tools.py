@@ -62,6 +62,7 @@ class Tools():
 
     def run_chain(self, chain, prompt: str, history=[]):
         print("Running Chain")
+        prompt = "\n\nHuman: " + prompt + " \n\nAssistant: "
         result = chain(prompt)
 
         return {
