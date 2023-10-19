@@ -780,9 +780,10 @@ def invoke_fm(intent_request):
     Invokes Foundational Model endpoint hosted on Amazon Bedrock and parses the response.
     """
     prompt = intent_request['inputTranscript']
+    prompt = "\n\nHuman: " + prompt + " \n\nAssistant: "
     chat = Chat(prompt)
     llm = Bedrock(
-        model_id="anthropic.claude-instant-v1"
+        model_id="anthropic.claude-v2"
     )  
     llm.model_kwargs = {'max_tokens_to_sample': 200}
     lex_agent = FSIAgent(llm, chat.memory)
