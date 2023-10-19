@@ -28,7 +28,7 @@ class Tools():
         region = os.environ['AWS_REGION']
 
         llm = Bedrock(
-            model_id="anthropic.claude-instant-v1"
+            model_id="anthropic.claude-v2"
         )  
         llm.model_kwargs = {'max_tokens_to_sample': 200} 
 
